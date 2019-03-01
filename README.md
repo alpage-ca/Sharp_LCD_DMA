@@ -7,4 +7,9 @@ Doing frequent updates on the Sharp Mono LCD can be very time consuming as each 
 The various buffers are expanded slightly so they can be sent to the display in a single DMA operation.
 
 The VCOM signal needed by the Sharp Mono LCD is handled by PWM at low frequency.
+The following functions are optimized for monochrome operation.
 
+    void writeFastVLine(int16_t x, int16_t y, int16_t h, uint16_t color); 
+    void writeFastHLine(int16_t x, int16_t y, int16_t w, uint16_t color);
+    void fillRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t color);
+    void drawPixel(int16_t x, int16_t y, uint16_t color);
